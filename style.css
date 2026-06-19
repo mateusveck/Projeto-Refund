@@ -4,3 +4,27 @@
 .font-sans{
     font-family: "Open Sans", sans-serif;
 }
+
+.grid-coluns{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.grid-price{
+    display: grid;
+    grid-template-columns: repeat(1fr 2fr,1);
+}
+
+.despesas-txt{
+
+
+
+    
+
+    &:focus{
+        border: 2px solid var(--green-100s);
+        outline: none;
+        transition: all 0.3s ease ;
+    }
+
+}

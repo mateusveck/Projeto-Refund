@@ -7,12 +7,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Refund | solicite seu reembolso</title>
 </head>
-<body class="container bg-gray-100">
+<body class="container bg-green-100">
     <span class="">
         <header class="flex gap-2 items-center my-10">
             <img src="assets/imgs/icons/Vector.svg" alt="" class="w-10">
             <h1 class="font-sans font-bold text-3xl text-green-700">refund</h1>
         </header>
+        <main class="grid-coluns">
+            <section class="bg-white p-10 rounded-xl">
+                <h2 class="text-2xl font-bold my-2">Solicitação de reembolso</h2>
+                <span>Informe os dados da despesa para solicitar reembolso. 
+                A despesa será analisada e reembolsada em até 30 dias.</span>
+
+                <form action="" class="my-10 text-gray-600 ">
+                    <label for="title" class="font-light">Titulo da despesa</label>
+                    <input type="text" id="title" class="border-2 rounded-md w-full h-10 my-4 p-4 despesas-txt border-gray-200">
+                    <fieldset class="gap-4 grid-price">
+                        <div>
+                            <label for="category" class="font-light text-gray-600">Categoria</label>
+                            <select name="category" id="category" class="border-2 rounded-md w-full h-10 my-4 despesas-txt border-gray-200">
+                                <option value="" selected disabled>Selecione</option>
+                                <option value="alimentacao" id="alimentacao">Alimentação</option>
+                                <option value="hospedagem" id="hospedagem">Hospedagem</option>
+                                <option value="transporte" id="Transporte">Transporte</option>
+                                <option value="servicos" id="Servicos">Servicos</option>
+                                <option value="outros" id="outros">Outros</option>
+                            </select>
+                        </div>
+                        <div>
+                        <label for="price" class="font-light text-gray-600">Valor</label>
+                            <input type="text" name="" id="price" class="border-2 rounded-md w-full h-10 my-4 p-4 despesas-txt border-gray-200">
+                        </div>
+                    </fieldset>
+
+                </form>
+            </section>
+
+            <section class="w-full bg-white mx-5 rounded-xl ">
+                <div class="flex gap-2 justify-between min-w-full m-11">
+                    <div class="flex gap-8">
+                        <h3 class="text-2xl font-bold">Minhas Solicitações</h3>
+                        <span class="font-md">0 Despesas</span>
+                    </div>
+                    <span>R$ 0,00 </span>
+                </div>
+            </section>
+        </main>
     </span>
 </body>
 </html>
