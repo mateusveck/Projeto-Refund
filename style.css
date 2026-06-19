@@ -12,19 +12,35 @@
 
 .grid-price{
     display: grid;
-    grid-template-columns: repeat(1fr 2fr,1);
+    grid-template-columns: 1fr 2fr;
 }
 
 .despesas-txt{
 
-
-
     
-
     &:focus{
         border: 2px solid var(--green-100s);
         outline: none;
         transition: all 0.3s ease ;
     }
 
+}
+
+.excluir{
+    &:hover{
+        background-color: rgba(128, 128, 128, 0.253);
+        transition: all 0.3s ease;     
+    }
+
+    &:hover path {
+        fill: red;
+        transition: all 0.3s ease;     
+
+    }
+}
+
+#category{
+    &:focus{
+        background-color: var(--green-100);
+    }
 }
