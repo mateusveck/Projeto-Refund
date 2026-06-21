@@ -3,6 +3,9 @@
     box-sizing: border-box;
 }
 .container{
-    width: min(100% - 4rem);
-    margin-inline: auto;
+    width: min(100% - 2rem, 1120px);
+  margin-inline: auto;
+}
+:root{
+    --green-100s:#1F8459;
 }
