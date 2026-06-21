@@ -18,7 +18,7 @@
                 <span>Informe os dados da despesa para solicitar reembolso. 
                 A despesa será analisada e reembolsada em até 30 dias.</span>
 
-                <form action="" class="my-10 text-gray-600 ">
+                <form action="" class="my-10 text-gray-600 " id="form">
                     <label for="title" class="font-light">Titulo da despesa</label>
                     <input type="text" id="title" class="border-2 rounded-md w-full h-10 my-4 p-4 despesas-txt border-gray-200">
                     <fieldset class="gap-4 grid-price">
@@ -39,7 +39,7 @@
                         </div>
 
                     </fieldset>
-                <button type="submit" class="w-full h-12 rounded-md bg-[#1F8459] text-white font-bold flex items-center justify-center hover:bg-[#2CB178] disabled:bg-[#93CDB5] disabled:cursor-not-allowed transition-colors duration-200">Adicionar despesas</button>
+                <button type="submit" class="w-full h-12 rounded-md bg-[#1F8459] text-white font-bold flex items-center justify-center hover:bg-[#2CB178] disabled:bg-[#93CDB5] disabled:cursor-not-allowed transition-colors duration-200" id="button" disabled>Adicionar despesas</button>
                 </form>
             </section>
 
@@ -52,8 +52,8 @@
                     <span class="text-sm text-gray-500">R$ <span class="text-black text-2xl font-semibold">0,00</span> </span>
                 </div>
                 <hr class="w-[95%] justify-self-center opacity-10">
-                <ul>
-                    <li class="flex m-10 gap-6">
+                <ul id="list">
+                    <li class="flex m-10 gap-6 hidden">
                         <div class=" bg-green-100 w-[50px] h-[50px] flex justify-center rounded-full">
                             <img src="assets/imgs/icons/Bed.svg" alt="" class="w-[35px]" id="hospedagem">
                         </div>
@@ -78,5 +78,6 @@
 
             </section>
         </main>
+    <script src="assets/script.js"></script>
 </body>
 </html>
