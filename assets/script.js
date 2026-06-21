@@ -20,17 +20,36 @@ let expenses = []
 form.addEventListener('submit' , (event) =>{
     event.preventDefault()
 
-let despesas = {
-    title: title.value,
-    category: category.value,
-    price: price.value,
+const expenseTitle = title.value.trim()
+const expenseCategory = category.value
+const expensePriceText = price.value.trim().replace(",", ".")
+const expensePrice = Number(expensePriceText)
+
+if (expenseTitle === "") {
+  console.log("Preencha o título da despesa")
+  return
+}
+
+if (expensePriceText === "") {
+  console.log("Preencha o valor da despesa")
+  return
+}
+
+if (Number.isNaN(expensePrice) || expensePrice <= 0) {
+  console.log("Digite um valor válido")
+  return 
+}
+
+let despesa = {
+    title: expenseTitle,
+    category: expenseCategory,
+    price: expensePrice,
 
 }
 
- expenses.push(despesa)
+expenses.push(despesa)
+form.reset()
+checkForm()
 
-  console.log(despesa)
-  console.log(expenses)
 
 })
-
