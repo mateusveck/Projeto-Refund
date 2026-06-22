@@ -14,7 +14,7 @@
             <h1 class="font-sans font-bold text-3xl text-green-700">refund</h1>
         </header>
         <main class="grid-coluns container gap-8">
-            <section class="bg-white p-10 rounded-xl">
+            <section class="bg-white p-10 rounded-xl form-card">
                 <h2 class="text-2xl font-bold my-2">Solicitação de reembolso</h2>
                 <span>Informe os dados da despesa para solicitar reembolso. 
                 A despesa será analisada e reembolsada em até 30 dias.</span>
@@ -44,16 +44,16 @@
                 </form>
             </section>
 
-            <section class="w-full bg-white rounded-xl h-[520px] flex flex-col overflow-hidden">
-                <div class="flex gap-2 justify-between m-11">
-                    <div class="flex gap-8 ">
+            <section class="w-full bg-white rounded-xl h-[520px] flex flex-col overflow-hidden requests-card">
+                <div class="flex gap-2 justify-between m-11 requests-header">
+                    <div class="flex gap-8 requests-title-area">
                         <h3 class="text-2xl font-light">Minhas Solicitações</h3>
                         <span class="self-center" id="expenses-count">0 Despesas</span>
                     </div>
                     <span class="text-sm text-gray-500">R$ <span class="text-black text-2xl font-semibold" id="expenses-total">0,00</span> </span>
                 </div>
                 <hr class="w-[95%] justify-self-center opacity-10">
-                <ul id="list" class="flex-1 overflow-y-auto min-h-0">
+                <ul id="list" class="flex-1 overflow-y-auto min-h-0 expenses-list">
 
                     
 
@@ -66,13 +66,13 @@
                             <div class=" bg-green-100 w-[50px] h-[50px] flex justify-center rounded-full">
                                 <img src="assets/imgs/icons/Bed.svg" alt="" class="expense-icon w-[35px]">
                             </div>
-                            <section class="flex justify-between w-full">
+                            <section class="flex justify-between w-full expense-content">
                                 <div>
                                     <h4 class="text-xl font-bold expense-title">Hotel</h4>
                                     <span id="" class="expense-category font-extralight">Hospedagem</span>
                                 </div>
 
-                                <div class="flex items-center gap-4">
+                                <div class="flex items-center gap-4 expense-actions">
                                     <span class="text-sm text-gray-500">R$ <span class="expense-price text-xl text-black">0,00</span></span>
                                     <button type="button" class="expense-delete">
                                         <svg width="25" height="25" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="excluir rounded-xl p-px">
