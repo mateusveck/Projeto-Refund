@@ -5,7 +5,8 @@ const price = document.querySelector("#price")
 const button = document.querySelector("#button")
 const list = document.querySelector("#list")
 const template = document.querySelector("#expense-template")
-const finalResult = document.querySelector(".final-result")
+const expensesCount = document.querySelector("#expenses-count")
+const expensesTotal = document.querySelector("#expenses-total")
 
 const categories = {
   alimentacao: {
@@ -64,9 +65,23 @@ function renderExpenses() {
       expenses = expenses.filter((expense) => expense.id !== despesa.id)
 
       renderExpenses()
+      updateSummary()
     })
 
     list.append(item)
+  })
+}
+
+function updateSummary() {
+  const total = expenses.reduce((sum, despesa) => {
+    return sum + despesa.price
+  }, 0)
+
+  expensesCount.textContent = `${expenses.length} ${expenses.length === 1 ? "Despesa" : "Despesas"}`
+
+  expensesTotal.textContent = total.toLocaleString("pt-BR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
   })
 }
 
@@ -103,6 +118,7 @@ let despesa = {
 
 expenses.push(despesa)
 renderExpenses()
+updateSummary()
 form.reset()
 checkForm()
 
