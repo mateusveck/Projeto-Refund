@@ -7,7 +7,7 @@
 
 .grid-coluns{
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1.5fr;
 }
 
 .grid-price{
@@ -17,7 +17,8 @@
 
 .despesas-txt{
 
-    
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
     &:focus{
         border: 2px solid var(--green-100s);
         outline: none;
@@ -25,22 +26,11 @@
     }
 
 }
-
-.excluir{
-    &:hover{
-        background-color: rgba(128, 128, 128, 0.253);
-        transition: all 0.3s ease;     
-    }
-
-    &:hover path {
-        fill: red;
-        transition: all 0.3s ease;     
-
-    }
+.input-error {
+  border-color: #dc2626 !important;
 }
 
-#category{
-    &:focus{
-        background-color: var(--green-100);
-    }
-}
+.input-error:focus {
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.15);
+} 

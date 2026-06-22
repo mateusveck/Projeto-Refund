@@ -104,6 +104,14 @@ function updateSummary() {
   })
 }
 
+function setError(input) {
+  input.classList.add("input-error")
+}
+
+function removeError(input) {
+  input.classList.remove("input-error")
+}
+
 form.addEventListener('submit' , (event) =>{
     event.preventDefault()
 
@@ -113,11 +121,13 @@ const expensePriceNumbers = price.value.replace(/\D/g, "")
 const expensePrice = Number(expensePriceNumbers) / 100
 
 if (expenseTitle === "") {
-  console.log("Preencha o título da despesa")
+  setError(title)
   return
+} else {
+  removeError(title)
 }
 
-if (expensePriceText === "") {
+if (expensePriceNumbers === "") {
   console.log("Preencha o valor da despesa")
   return
 }
