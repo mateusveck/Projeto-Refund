@@ -12,6 +12,21 @@ price.addEventListener("input", () => {
   price.value = price.value.replace(/[^\d,]/g, "")
 })
 
+function formatPrice(value) {
+  const onlyNumbers = value.replace(/\D/g, "")
+
+  const numberValue = Number(onlyNumbers) / 100
+
+  return numberValue.toLocaleString("pt-BR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })
+}
+
+price.addEventListener("input", () => {
+  price.value = formatPrice(price.value)
+})
+
 const categories = {
   alimentacao: {
     name: "Alimentação",
@@ -94,8 +109,8 @@ form.addEventListener('submit' , (event) =>{
 
 const expenseTitle = title.value.trim()
 const expenseCategory = category.value
-const expensePriceText = price.value.trim().replace(",", ".")
-const expensePrice = Number(expensePriceText)
+const expensePriceNumbers = price.value.replace(/\D/g, "")
+const expensePrice = Number(expensePriceNumbers) / 100
 
 if (expenseTitle === "") {
   console.log("Preencha o título da despesa")
