@@ -15,8 +15,8 @@ function formatPrice(value) {
   const numberValue = Number(onlyNumbers) / 100
 
   return numberValue.toLocaleString("pt-BR", {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
+    style:"currency",
+    currency:"BRL",
   })
 }
 
