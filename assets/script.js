@@ -8,9 +8,6 @@ const template = document.querySelector("#expense-template")
 const expensesCount = document.querySelector("#expenses-count")
 const expensesTotal = document.querySelector("#expenses-total")
 
-price.addEventListener("input", () => {
-  price.value = price.value.replace(/[^\d,]/g, "")
-})
 
 function formatPrice(value) {
   const onlyNumbers = value.replace(/\D/g, "")
@@ -112,6 +109,21 @@ function removeError(input) {
   input.classList.remove("input-error")
 }
 
+title.addEventListener("input", () => {
+  if (title.value.trim() !== "") {
+    removeError(title)
+  }
+})
+
+price.addEventListener("input", () => {
+  const priceNumbers = price.value.replace(/\D/g, "")
+  const priceValue = Number(priceNumbers) / 100
+
+  if (priceValue > 0) {
+    removeError(price)
+  }
+})
+
 form.addEventListener('submit' , (event) =>{
     event.preventDefault()
 
@@ -127,14 +139,15 @@ if (expenseTitle === "") {
   removeError(title)
 }
 
-if (expensePriceNumbers === "") {
-  console.log("Preencha o valor da despesa")
+if (expensePrice <= 0) {
+  setError(price)
   return
+} else {
+  removeError(price)
 }
 
-if (Number.isNaN(expensePrice) || expensePrice <= 0) {
-  console.log("Digite um valor válido")
-  return 
+if (expenseCategory === "") {
+  return
 }
 
 let despesa = {
@@ -149,6 +162,8 @@ expenses.push(despesa)
 renderExpenses()
 updateSummary()
 form.reset()
+removeError(title)
+removeError(price)
 checkForm()
 
 
