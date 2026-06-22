@@ -24,18 +24,18 @@
                     <fieldset class="gap-4 grid-price">
                         <div>
                             <label for="category" class="font-light text-gray-600">Categoria</label>
-                            <select name="category" id="category" class="border-2 rounded-md w-full h-10 my-4 despesas-txt border-gray-200 ">
+                           <select name="category" id="category" class="border-2 rounded-md w-full h-10 my-4 despesas-txt border-gray-200">
                                 <option value="" selected disabled>Selecione</option>
-                                <option value="Alimentação" id="alimentacao">Alimentação</option>
-                                <option value="Hospedagem" id="hospedagem">Hospedagem</option>
-                                <option value="Transporte" id="Transporte">Transporte</option>
-                                <option value="Servicos" id="Servicos">Servicos</option>
-                                <option value="Outros" id="outros">Outros</option>
+                                <option value="alimentacao">Alimentação</option>
+                                <option value="hospedagem">Hospedagem</option>
+                                <option value="transporte">Transporte</option>
+                                <option value="servicos">Serviços</option>
+                                <option value="outros">Outros</option>
                             </select>
                         </div>
                         <div>
                         <label for="price" class="font-light text-gray-600">Valor</label>
-                            <input type="text" name="" id="price" class="border-2 rounded-md w-full h-10 my-4 p-4 despesas-txt border-gray-200">
+                            <input type="text" name="" id="price" class="border-2 rounded-md w-full h-10 my-4 p-4 despesas-txt border-gray-200" placeholder="0,00" inputmode="decimal">
                         </div>
 
                     </fieldset>
@@ -47,9 +47,9 @@
                 <div class="flex gap-2 justify-between m-11">
                     <div class="flex gap-8 ">
                         <h3 class="text-2xl font-light">Minhas Solicitações</h3>
-                        <span class="self-center">0 Despesas</span>
+                        <span class="self-center" id="expenses-count">0 Despesas</span>
                     </div>
-                    <span class="text-sm text-gray-500">R$ <span class="text-black text-2xl font-semibold">0,00</span> </span>
+                    <span class="text-sm text-gray-500">R$ <span class="text-black text-2xl font-semibold" id="expenses-total">0,00</span> </span>
                 </div>
                 <hr class="w-[95%] justify-self-center opacity-10">
                 <ul id="list">

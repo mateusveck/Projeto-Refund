@@ -8,6 +8,10 @@ const template = document.querySelector("#expense-template")
 const expensesCount = document.querySelector("#expenses-count")
 const expensesTotal = document.querySelector("#expenses-total")
 
+price.addEventListener("input", () => {
+  price.value = price.value.replace(/[^\d,]/g, "")
+})
+
 const categories = {
   alimentacao: {
     name: "Alimentação",
